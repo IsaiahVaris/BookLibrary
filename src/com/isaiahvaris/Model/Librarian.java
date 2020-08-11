@@ -32,7 +32,7 @@ public class Librarian {
         Library.getQueue().add(user);
     }
 
-    //Librarian attends to users after they've been added to the queue
+    //Attending to each user
     public void attendTo (LibraryUser user) {
         //Fulfil request if book user wants is present in the library
         if (Library.getBooks().containsKey(user.getBookRequest())) {
@@ -48,6 +48,7 @@ public class Librarian {
         }
     }
 
+    //Librarian attends to all users after they've been added to the queue
     public void attendToQueue (Queue<LibraryUser> queue) {
         while (!queue.isEmpty()) {
             this.attendTo(queue.poll());
