@@ -3,8 +3,8 @@ package com.isaiahvaris.Model.Test;
 import com.isaiahvaris.Model.Librarian;
 import com.isaiahvaris.Model.Library;
 import com.isaiahvaris.Model.LibraryUser;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryUserTest {

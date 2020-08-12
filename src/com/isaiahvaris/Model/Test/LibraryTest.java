@@ -2,8 +2,8 @@ package com.isaiahvaris.Model.Test;
 
 import com.isaiahvaris.Model.Librarian;
 import com.isaiahvaris.Model.Library;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {

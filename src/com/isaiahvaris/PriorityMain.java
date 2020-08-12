@@ -1,4 +1,5 @@
 package com.isaiahvaris;
+
 import com.isaiahvaris.Model.*;
 
 public class PriorityMain {
