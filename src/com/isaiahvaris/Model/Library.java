@@ -32,11 +32,15 @@ public class Library {
     public static Queue<LibraryUser> getQueue() { return queue; }
 
     //To check books currently available in the library and their quantity
-    public static void getCurrentLibraryStatus() {
-        System.out.println("There are " + books.size() + " different books in the library:");
-        for (Map.Entry<String, Integer> entry : books.entrySet()) {
-            System.out.println(entry.getValue() + " copy(ies) of " + entry.getKey());
+    public static String getCurrentLibraryStatus() {
+        if (books.isEmpty()) {
+            return "There are no books in the library";
         }
+            String message = "There are " + books.size() + " different books in the library:\n";
+            for (Map.Entry<String, Integer> entry : books.entrySet()) {
+                message += entry.getValue() + " copy(ies) of " + entry.getKey() + "\n";
+            }
+        return message;
     }
 }
 //Comparator for populating the library priority queue

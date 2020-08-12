@@ -4,7 +4,10 @@ import com.isaiahvaris.Model.*;
 
 public class FIFOMain {
     public static void main(String[] args) {
+
+        //Set queue implementation
         Library.setImplementation("FIFO");
+
         //get the librarian
         Librarian librarian = Library.getLibrarian();
         //librarian populates the library with some books
@@ -15,28 +18,27 @@ public class FIFOMain {
         librarian.addBook("New General Mathematics", 4);
         System.out.println();
         //Check current status of books in the library
-        Library.getCurrentLibraryStatus();
+        System.out.println(Library.getCurrentLibraryStatus());
 
-        /*User are created(enter the library) and are successfully added to the queues
-        if they are students or teachers allowed to use the library.
-        Any user not allowed will be flagged and won't be added to the queue*/
-        LibraryUser john = new LibraryUser("john","Modern Biology", "junior student");
-        LibraryUser jane = new LibraryUser("jane", "Effective Java", "junior student");
-        LibraryUser jack = new LibraryUser("jack", "Effective Java", "senior student");
-        LibraryUser jerry = new LibraryUser("Mondris", "Effective Java", "ex-student");
-        LibraryUser mary = new LibraryUser("mary","Things Fall Apart", "teacher");
-        LibraryUser chika = new LibraryUser("chika","Java: A Beginner's Guide", "teacher");
-        LibraryUser tolu = new LibraryUser("tolu","New General Mathematics", "junior student");
-        LibraryUser lanre = new LibraryUser("lanre", "Effective Java", "teacher");
-        LibraryUser bright = new LibraryUser("bright","The HitchHiker's Guide To The Galaxy", "senior student");
-        System.out.println();
-
-
-        librarian.attendToQueue(Library.getQueue());
-        System.out.println();
-
-        //Check current status of books in the library
-        Library.getCurrentLibraryStatus();
-
+//        /*User are created(enter the library) and are successfully added to the queues
+//        if they are students or teachers allowed to use the library.
+//        Any user not allowed will be flagged and won't be added to the queue*/
+//        LibraryUser john = new LibraryUser("john","Modern Biology", "junior student");
+//        LibraryUser jane = new LibraryUser("jane", "Effective Java", "junior student");
+//        LibraryUser jack = new LibraryUser("jack", "Effective Java", "senior student");
+//        LibraryUser mondris = new LibraryUser("Mondris", "Effective Java", "ex-student");
+//        LibraryUser mary = new LibraryUser("mary","Things Fall Apart", "teacher");
+//        LibraryUser chika = new LibraryUser("chika","Java: A Beginner's Guide", "teacher");
+//        LibraryUser tolu = new LibraryUser("tolu","New General Mathematics", "junior student");
+//        LibraryUser lanre = new LibraryUser("lanre", "Effective Java", "teacher");
+//        LibraryUser bright = new LibraryUser("bright","The HitchHiker's Guide To The Galaxy", "senior student");
+//        System.out.println();
+//
+//        //attend to all users on the queue
+//        librarian.attendToQueue(Library.getQueue());
+//        System.out.println();
+//
+//        //Check current status of books in the library
+        System.out.println(Library.getCurrentLibraryStatus());
     }
 }

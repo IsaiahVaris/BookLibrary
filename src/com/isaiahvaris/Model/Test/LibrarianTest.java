@@ -15,15 +15,13 @@ class LibrarianTest {
     @Test
     void testAddMultipleBooks() {
         Librarian librarian = Library.getLibrarian();
-        librarian.addBook("Effective Java", 3);
-        assertEquals(3, Library.getBooks().get("Effective Java".toUpperCase()));
-    }
-
-    @Test
-    void testAddBook() {
-        Librarian librarian = Library.getLibrarian();
         librarian.addBook("Things Fall Apart");
+        librarian.addBook("Effective Java", 3);
+        //Should have the same number of copies of books that were added
         assertEquals(1, Library.getBooks().get("Things Fall Apart".toUpperCase()));
+        assertEquals(3, Library.getBooks().get("Effective Java".toUpperCase()));
+        //Should return null if the book is not in the library
+        assertNull(Library.getBooks().get("Non existent book"));
     }
 
     @Test
@@ -44,7 +42,8 @@ class LibrarianTest {
         librarian.addBook("Computer Science is Easy", 2);
         librarian.attendTo(john);
 
+        //Quantity of book requested by user should decrease if user was succesfully attended to
         assertEquals(1, Library.getBooks().get("Computer Science is Easy".toUpperCase()));
-        assertNull(Library.getBooks().get("Non existent book"));
+
     }
 }

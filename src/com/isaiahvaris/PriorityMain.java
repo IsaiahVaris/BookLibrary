@@ -4,6 +4,7 @@ import com.isaiahvaris.Model.*;
 public class PriorityMain {
     public static void main(String[] args) {
 
+        //Set queue implementation
         Library.setImplementation("Priority");
 
         //get the librarian
@@ -16,7 +17,7 @@ public class PriorityMain {
         librarian.addBook("New General Mathematics", 4);
         System.out.println();
         //Check current status of books in the library
-        Library.getCurrentLibraryStatus();
+        System.out.println(Library.getCurrentLibraryStatus());
 
         /*User are created(enter the library) and are successfully added to the queues
         if they are students or teachers allowed to use the library.
@@ -24,7 +25,7 @@ public class PriorityMain {
         LibraryUser john = new LibraryUser("john","Modern Biology", "junior student");
         LibraryUser jane = new LibraryUser("jane", "Effective Java", "junior student");
         LibraryUser jack = new LibraryUser("jack", "Effective Java", "senior student");
-        LibraryUser jerry = new LibraryUser("Mondris", "Effective Java", "ex-student");
+        LibraryUser mondris = new LibraryUser("Mondris", "Effective Java", "ex-student");
         LibraryUser mary = new LibraryUser("mary","Things Fall Apart", "teacher");
         LibraryUser chika = new LibraryUser("chika","Java: A Beginner's Guide", "teacher");
         LibraryUser tolu = new LibraryUser("tolu","New General Mathematics", "junior student");
@@ -32,11 +33,11 @@ public class PriorityMain {
         LibraryUser bright = new LibraryUser("bright","The HitchHiker's Guide To The Galaxy", "senior student");
         System.out.println();
 
-
+        //attend to all users on the queue
         librarian.attendToQueue(Library.getQueue());
         System.out.println();
 
         //Check current status of books in the library
-        Library.getCurrentLibraryStatus();
+        System.out.println(Library.getCurrentLibraryStatus());
     }
 }
