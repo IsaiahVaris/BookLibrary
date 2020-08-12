@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibrarianTest {
 
     @Test
-    void testAddMultipleBooks() {
+    void testAddBooks() {
         Librarian librarian = Library.getLibrarian();
         librarian.addBook("Things Fall Apart");
         librarian.addBook("Effective Java", 3);
@@ -22,6 +22,7 @@ class LibrarianTest {
         assertEquals(3, Library.getBooks().get("Effective Java".toUpperCase()));
         //Should return null if the book is not in the library
         assertNull(Library.getBooks().get("Non existent book"));
+        Library.getBooks().clear();
     }
 
     @Test
@@ -45,5 +46,6 @@ class LibrarianTest {
         //Quantity of book requested by user should decrease if user was succesfully attended to
         assertEquals(1, Library.getBooks().get("Computer Science is Easy".toUpperCase()));
 
+        Library.getBooks().clear();
     }
 }

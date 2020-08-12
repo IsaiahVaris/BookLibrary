@@ -32,5 +32,6 @@ class LibraryTest {
         assertEquals("There are 2 different books in the library:\n" +
                 "2 copy(ies) of JAVA: A BEGINNER’S GUIDE\n" +
                 "3 copy(ies) of EFFECTIVE JAVA\n", Library.getCurrentLibraryStatus());
+        Library.getBooks().clear();
     }
 }
