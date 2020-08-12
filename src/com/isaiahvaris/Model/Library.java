@@ -17,10 +17,13 @@ public class Library {
         if ("FIFO".equals(implementation)) {
             //first in first out queue
             queue = new LinkedList<>();
-        }
-        if ("Priority".equals(implementation)) {
+        } if ("Priority".equals(implementation)) {
             //priority queue using custom comparator
             queue = new PriorityQueue<>(new UserComparator());
+            //error message if right implementation is not set
+        } else {
+            System.err.println("Set \"Priority\" for priority queue implementation" +
+                    " and \"FIFO\" for oridnary queue implementation");
         }
     }
 
