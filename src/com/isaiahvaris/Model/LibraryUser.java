@@ -1,5 +1,7 @@
 package com.isaiahvaris.Model;
 
+import java.util.function.Predicate;
+
 public class LibraryUser {
     private String name;
     private String bookRequest;
@@ -11,14 +13,20 @@ public class LibraryUser {
         level = level.toLowerCase();
         /*Check if user level is allowed before initializing(allowing user into the library)
         Anyone who isn't a student or a teacher shouldn't be allowed to use the library*/
-        if (!("junior student".equals(level) || "senior student".equals(level) || "teacher".equals(level))) {
+//        if (!("junior student".equals(level) || "senior student".equals(level) || "teacher".equals(level))) {
+
+        Predicate<String> isValidLevel = n -> "junior student".equals(n) || "senior student".equals(n) || "teacher".equals(n);
+
+        if (!isValidLevel.test(level)) {
             System.err.println((name + " cannot use Library. " +
                     "User must be either a junior or senior student or a teacher\n").toUpperCase());
             return;
         }
+
         this.level = level;
         this.name = name.toLowerCase();
         this.bookRequest = bookRequest.toUpperCase();
+
         //level number is set based on user level
         switch (level) {
             case "teacher":
@@ -31,7 +39,7 @@ public class LibraryUser {
                 this.levelNumber = 3;
         }
         //User is added to queue by the librarian as he/she is created (as user enters the library)
-        Library.getLibrarian().addToQueue(this);
+        Library.getLibrarian().addToQueue.accept(this);
     }
 
     //getters for user fields

@@ -18,8 +18,10 @@ class UserComparatorTest {
         LibraryUser lanre = new LibraryUser("lanre", "Effective Java", "teacher");
 
         //Book requests are the same so order in queue should follow priority not order of adding to the list
-        assertEquals(lanre, Library.getQueue().poll());
-        assertEquals(jack, Library.getQueue().poll());
-        assertEquals(jane, Library.getQueue().poll());
+        assertAll(
+                () -> assertEquals(lanre, Library.getQueue().poll()),
+                () -> assertEquals(jack, Library.getQueue().poll()),
+                () -> assertEquals(jane, Library.getQueue().poll())
+        );
     }
 }
