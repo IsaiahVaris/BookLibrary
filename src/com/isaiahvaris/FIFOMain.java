@@ -15,7 +15,7 @@ public class FIFOMain {
         librarian.addBook("java: a beginner’s guide", 2);
         librarian.addBook("The hitchhiker's guide To the galaxy");
         librarian.addBook("Things fall apart");
-        librarian.addBook("New General Mathematics", 4);
+        librarian.addBook("New General Mathematics.", 4);
         System.out.println();
         //Check current status of books in the library
         System.out.println(Library.getCurrentLibraryStatus());
