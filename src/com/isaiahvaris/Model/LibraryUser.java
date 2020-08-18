@@ -33,9 +33,13 @@ public class LibraryUser {
         }
         //Anyone who isn't a student or a teacher shouldn't be allowed to use the library
         else {
-            System.err.println((name + " cannot use Library. " +
-                    "User must be either a junior or senior student or a teacher\n").toUpperCase());
-            return;
+            try {
+                throw new IllegalArgumentException();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+                System.err.println((name + " cannot use Library. " +
+                        "User must be either a junior or senior student or a teacher\n").toUpperCase());
+            }
         }
     }
 

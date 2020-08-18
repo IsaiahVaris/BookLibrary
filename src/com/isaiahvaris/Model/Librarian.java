@@ -4,7 +4,6 @@ import java.util.Queue;
 import java.util.function.Consumer;
 
 public class Librarian {
-
     //Librarian can add a book to the library
     public void addBook (String book) {
         book = book.toUpperCase();
@@ -41,11 +40,6 @@ public class Librarian {
     }
     //Librarian attends to all users after they've been added to the queue
     public void attendToQueue (Queue<LibraryUser> queue) {
-
-//        Library.getQueue().stream().map();
-
-        while (!queue.isEmpty()) {
-            this.attendTo(queue.poll());
-        }
+        queue.forEach(libraryUser -> {attendTo(libraryUser);});
     }
 }
