@@ -2,8 +2,6 @@ package com.isaiahvaris.Model;
 
 import java.util.*;
 import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class Library {
     //Library has a collection of books...

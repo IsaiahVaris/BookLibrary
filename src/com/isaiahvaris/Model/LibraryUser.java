@@ -11,57 +11,44 @@ public class LibraryUser {
 
     public LibraryUser(String name, String bookRequest, String level) {
         level = level.toLowerCase();
-        /*Check if user level is allowed before initializing(allowing user into the library)
-        Anyone who isn't a student or a teacher shouldn't be allowed to use the library*/
-//        if (!("junior student".equals(level) || "senior student".equals(level) || "teacher".equals(level))) {
-
+         //Check if user level is allowed before initializing(allowing user into the library)
         Predicate<String> isValidLevel = n -> "junior student".equals(n) || "senior student".equals(n) || "teacher".equals(n);
-
-        if (!isValidLevel.test(level)) {
+        if (isValidLevel.test(level)) {
+            this.level = level;
+            this.name = name.toLowerCase();
+            this.bookRequest = bookRequest.toUpperCase();
+            //level number is set based on user level
+            switch (level) {
+                case "teacher":
+                    this.levelNumber = 1;
+                    break;
+                case "senior student":
+                    this.levelNumber = 2;
+                    break;
+                default:
+                    this.levelNumber = 3;
+            }
+            //User is added to queue by the librarian as he/she is created (as user enters the library)
+            Library.getLibrarian().addToQueue.accept(this);
+        }
+        //Anyone who isn't a student or a teacher shouldn't be allowed to use the library
+        else {
             System.err.println((name + " cannot use Library. " +
                     "User must be either a junior or senior student or a teacher\n").toUpperCase());
             return;
         }
-
-        this.level = level;
-        this.name = name.toLowerCase();
-        this.bookRequest = bookRequest.toUpperCase();
-
-        //level number is set based on user level
-        switch (level) {
-            case "teacher":
-                this.levelNumber = 1;
-                break;
-            case "senior student":
-                this.levelNumber = 2;
-                break;
-            default:
-                this.levelNumber = 3;
-        }
-        //User is added to queue by the librarian as he/she is created (as user enters the library)
-        Library.getLibrarian().addToQueue.accept(this);
     }
 
     //getters for user fields
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public String getBookRequest() {
-        return bookRequest;
-    }
+    public String getBookRequest() { return bookRequest; }
 
-    public String getLevel() {
-        return level;
-    }
+    public String getLevel() { return level; }
 
-    public int getLevelNumber() {
-        return levelNumber;
-    }
+    public int getLevelNumber() { return levelNumber; }
 
     public int getQueueNumber() { return queueNumber; }
 
-    public void setQueueNumber(int queueNumber) {
-        this.queueNumber = queueNumber;
-    }
+    public void setQueueNumber(int queueNumber) { this.queueNumber = queueNumber; }
 }
