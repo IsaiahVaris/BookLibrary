@@ -2,6 +2,7 @@ package com.isaiahvaris.Model;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Library {
     //Library has a collection of books...
@@ -55,6 +56,6 @@ public class Library {
         Function<Map.Entry<String, Integer>, String> bookStatus = entry ->
                 entry.getValue() + " copy(ies) of " + entry.getKey() + "\n";
 
-        return message + Library.books.entrySet().stream().map(bookStatus).reduce("", (a, b) -> a + b);
+        return message + Library.books.entrySet().stream().map(bookStatus).collect(Collectors.joining());
     }
 }
