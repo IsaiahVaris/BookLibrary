@@ -54,8 +54,8 @@ public class Library {
 
         String message = "There are " + books.size() + " different books in the library:\n";
         Function<Map.Entry<String, Integer>, String> bookStatus = entry ->
-                entry.getValue() + " copy(ies) of " + entry.getKey() + "\n";
+                entry.getValue() + " copy(ies) of " + entry.getKey();
 
-        return message + Library.books.entrySet().stream().map(bookStatus).collect(Collectors.joining());
+        return message + Library.books.entrySet().stream().map(bookStatus).collect(Collectors.joining("\n"));
     }
 }
