@@ -11,7 +11,7 @@ public class LibraryUser {
 
     public LibraryUser(String name, String bookRequest, String level) {
         level = level.toLowerCase();
-         //Check if user level is allowed before initializing(allowing user into the library)
+         //Check if user level is allowed before initializing (allowing user into the library)
         Predicate<String> isValidLevel = n -> "junior student".equals(n) || "senior student".equals(n) || "teacher".equals(n);
         if (isValidLevel.test(level)) {
             this.level = level;
@@ -31,7 +31,7 @@ public class LibraryUser {
             //User is added to queue by the librarian as he/she is created (as user enters the library)
             Library.getLibrarian().addToQueue.accept(this);
         }
-        //Anyone who isn't a student or a teacher shouldn't be allowed to use the library
+        //Anyone who isn't a student or a teacher shouldn't be allowed to use the library. Exception and error message.
         else {
             try {
                 throw new IllegalArgumentException();

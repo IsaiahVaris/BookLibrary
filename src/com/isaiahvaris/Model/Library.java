@@ -29,7 +29,7 @@ public class Library {
                         Integer.compare(user1.getQueueNumber(), user2.getQueueNumber());
             });
         }
-        //error message if right implementation is not set
+        //Exception and error message if right implementation is not set
         else {
             try {
                 throw new IllegalArgumentException();
@@ -53,6 +53,7 @@ public class Library {
         if (books.isEmpty()) { return "There are no books in the library"; }
 
         String message = "There are " + books.size() + " different books in the library:\n";
+
         Function<Map.Entry<String, Integer>, String> bookStatus = entry ->
                 entry.getValue() + " copy(ies) of " + entry.getKey();
 

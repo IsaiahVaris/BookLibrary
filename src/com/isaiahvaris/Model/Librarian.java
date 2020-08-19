@@ -7,14 +7,18 @@ public class Librarian {
     //Librarian can add a book to the library
     public void addBook (String book) {
         book = book.toUpperCase();
-        Library.getBooks().put(book, Library.getBooks().containsKey(book) ? (Library.getBooks().get(book) + 1) : 1);
+        //Adding one to the quantity/number of copies of the book in the library
+        Library.getBooks().put(book, Library.getBooks().containsKey(book) ?
+                (Library.getBooks().get(book) + 1) : 1);
         System.out.println("One copy of " + book + " added to the library.");
     }
 
     //Librarian can add multiple copies of a book at a time
     public void addBook (String book, int quantity) {
         book = book.toUpperCase();
-       Library.getBooks().put(book, Library.getBooks().containsKey(book) ? (Library.getBooks().get(book) + quantity) : quantity);
+        //Adding specified quantity to the quantity/number of copies of the book in the library
+       Library.getBooks().put(book, Library.getBooks().containsKey(book) ?
+               (Library.getBooks().get(book) + quantity) : quantity);
         System.out.println(quantity + " copies of " + book + " added to the library.");
     }
 
