@@ -1,5 +1,6 @@
 # BookLibrary
 A book library where a student, teacher borrow books.
+Lamba expressions, functional interfaces and Streams API were used as much as possible. 
 
 Implementation 1:
 
