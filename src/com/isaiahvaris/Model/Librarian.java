@@ -42,6 +42,7 @@ public class Librarian {
             //If there are no more copies of a book in the library it should be removed
             Library.getBooks().remove(user.getBookRequest(), 0);
         }
+
         //Request can't be fulfilled if book user wants is not present in the library
         else {
             System.out.println(user.getBookRequest() + " is not available in the library");
